@@ -1,5 +1,6 @@
 ### SN-Hacking
 A resource containing unique hacking minigames made by ProdigyRP
+FULL CREDITS TO: https://prodigyworld.net/
 
 ## Memory Minigame
 ```
@@ -34,5 +35,3 @@ A resource containing unique hacking minigames made by ProdigyRP
     end
 ```
 ![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/dcad4620-5b4e-42bb-8ca0-4e6fd5859721)
-
-FULL CREDITS TO: https://prodigyworld.net/
