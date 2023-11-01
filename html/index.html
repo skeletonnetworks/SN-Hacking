@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div id="NumberUpMinigame">
+            <div id="Num_TriesBar"class="TriesBar"></div>
+            <div class="ProgressbarBase" style="top: 4vh;">
+                <div id="Num_Progressbar" class="Progressbar" style="background-color: #2B3660;"></div>
+            </div>
+            <div id="Num_keyArea" class="KeyButtonArea" style="grid-template-columns: repeat(4, 1fr);"></div>
+            <div class="ProgressbarBase" style="height: 0.5vh; background-color: #264154;">
+                <div id="Num_shuffleTime" class="Progressbar" style="background-color: #74ABC1;"></div>
+            </div>
+            <div id="Num_CountdownScreen" class="BlackBackground">
+                <div class="Countdown" style="top: 35%; font-size: 3vh;">PREPARING DEVICE</div>
+                <div id="Num_Countdown" class="Countdown" style="top: 50%;">3</div>
+            </div>
+            <div id="ResultScreen" class="BlackBackground">
+                <div id="ResultBanner" class="ResultBanner">
+                    <img id="ResultIcon" class="ResultIcon" src="./images/check.png">
+                    <div id="ResultText" class="ResultText">Success!</div>
+                </div>
+            </div>
+        </div>
+        <div id="MemoryMinigame">
+           <div id="CurrentKeys" class="CurrentKeys">NO INPUT</div>
+            <div class="ProgressbarBase">
+                <div class="Progressbar"></div>
+            </div>
+            <div class="KeyButtonArea"  style="grid-template-columns: repeat(3, 1fr);">
+                <div class="Button" id="Button1" style="left:0vh; top:0vh;" onclick="ButtonClicked(1)">
+                    <div class="ButtonFont">1</div>
+                </div>
+                <div class="Button" id="Button2" style="left:33.33%; top:0vh;" onclick="ButtonClicked(2)">
+                    <div class="ButtonFont">2</div>
+                </div>
+                <div class="Button" id="Button3" style="left:66.66%; top:0vh;" onclick="ButtonClicked(3)">
+                    <div class="ButtonFont">3</div>
+                </div>
+                <div class="Button" id="Button4" style="left:0vh; top:25%;" onclick="ButtonClicked(4)">
+                    <div class="ButtonFont">4</div>
+                </div>
+                <div class="Button" id="Button5" style="left:33.33%; top:25%;" onclick="ButtonClicked(5)">
+                    <div class="ButtonFont">5</div>
+                </div>
+                <div class="Button" id="Button6" style="left:66.66%; top:25%;" onclick="ButtonClicked(6)">
+                    <div class="ButtonFont">6</div>
+                </div>
+
+                <div class="Button" id="Button7" style="left:0vh; top:50%;" onclick="ButtonClicked(7)">
+                    <div class="ButtonFont">7</div>
+                </div>
+                <div class="Button" id="Button8" style="left:33.33%; top:50%;" onclick="ButtonClicked(8)">
+                    <div class="ButtonFont">8</div>
+                </div>
+                <div class="Button" id="Button9" style="left:66.66%; top:50%;" onclick="ButtonClicked(9)">
+                    <div class="ButtonFont">9</div>
+                </div>
+
+                <div class="Button" id="Button10" style="left:0vh; top:75%;" onclick="ButtonClicked(10)">
+                    <div class="ButtonFont">10</div>
+                </div>
+                <div class="Button" id="Button11" style="left:33.33%; top:75%;" onclick="ButtonClicked(11)">
+                    <div class="ButtonFont">11</div>
+                </div>
+                <div class="Button" id="Button12" style="left:66.66%; top:75%;" onclick="ButtonClicked(12)">
+                    <div class="ButtonFont">12</div>
+                </div>
+            </div>
+            <div id="Mem_CountdownScreen" class="BlackBackground">
+                <div class="Countdown" id="Mem_Countdown">3</div>
+            </div>
+            <div id="Mem_ResultScreen" class="BlackBackground">
+                <div id="Mem_ResultBanner" class="ResultBanner">
+                    <img id="Mem_ResultIcon" class="ResultIcon" src="./images/check.png">
+                    <div id="Mem_ResultText" class="ResultText">Success!</div>
+                </div>
+            </div>
+        </div>
+        <div id="SkillCheckMinigame">
+            <div id="SkillCheckBarArea" class="KeyButtonArea"  style="gap: 0.5vh; width: 100%;">
+            </div>
+            <div id="SC_Timer" class="TimerText">0s / 4.25s</div>
+            <div id="SC_CountdownScreen"  class="BlackBackground">
+                <div id="SC_Countdown" class="SkillCheckCountdown">3</div>
+            </div>
+            <div id="SC_ResultScreen" class="BlackBackground">
+                <div id="SC_ResultBanner" class="ResultBanner" style="top: 23vh;">
+                    <img id="SC_ResultIcon" class="ResultIcon" src="./images/check.png">
+                    <div id="SC_ResultText" class="ResultText">Success!</div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./scripts/MemoryGame.js" type="text/javascript"></script>
+        <script src="./scripts/NumberUp.js" type="text/javascript"></script>
+        <script src="./scripts/SkillCheck.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,225 @@
+@font-face {
+    font-family: digital;
+    src: url("./fonts/digital.ttf");
+  }
+
+body {
+    overflow: hidden;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.BackgroundImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0vh;
+    left: 0vh;
+}
+
+#MemoryMinigame {
+    position: absolute;
+    resize: both;
+    padding: 2vh;
+    top: 33.4vh;
+    left: 75.4vh;
+    background-color: #080C16;
+    box-shadow: 0vh 0vh 0.2vh black;
+    display: none;
+}
+
+#NumberUpMinigame {
+    position: absolute;
+    resize: both;
+    padding: 2vh;
+    top: 28.0vh;
+    left: 75.4vh;
+    background-color: #080C16;
+    box-shadow: 0vh 0vh 0.2vh black;
+    display: none;
+}
+
+.BlackBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0vh;
+    left: 0vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.ProgressbarBase {
+    width: 23.8vh;
+    height: 2vh;
+    margin-top: 1vh;
+    left: 1.9vh;
+    border-radius: 0.4vh;
+    background-color: #2B3D07;
+}
+
+.Progressbar {
+    width: 100%;
+    height: 100%;
+    top: 0vh;
+    left: 0vh;
+    border-radius: 0.4vh;
+    background-color: #769719;
+}
+
+.KeyButtonArea {
+    width: 23.8vh;
+    height: auto;
+    margin-top: 1vh;
+    left: 1.9vh;
+    display: grid;
+}
+
+.Button {
+    height: 5vh;
+    border-radius: 0.2vh;
+    background-color: #080C16;
+}
+
+.Button:hover {
+    background-color: #0e121f;
+}
+
+.Button:active {
+    background-color: #154619;
+}
+
+.ButtonFont {
+    position: relative;
+    width: 100%;
+    left: 0vh;
+    top: 0.9vh;
+    text-align: center;
+    font-family: digital;
+    font-size: 3vh;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.CurrentKeys {
+    width: 23.8vh;
+    left: 1.9vh;
+    top: 2vh;
+    text-align: right;
+    font-family: digital;
+    font-size: 4vh;
+    color: white;
+}
+
+.Countdown {
+    position: absolute;
+    width: 100%;
+    left: 0vh;
+    top: 13vh;
+    text-align: center;
+    font-family: digital;
+    font-size: 10vh;
+    color: white;
+}
+
+.ResultBanner {
+    position: relative;
+    width: 75%;
+    height: 4vh;
+    top: 13vh;
+    margin: auto;
+    background-color: #769719;
+    display: block;
+}
+
+.ResultText {
+    position: absolute;
+    width: 50%;
+    height: 2.3vh;
+    left: 4.5vh;
+    top: 0.8vh;
+    text-align: left;
+    font-family: fantasy;
+    font-size: 1.75vh;
+    color: white;
+    overflow: hidden;
+}
+
+.ResultIcon {
+    position: absolute;
+    width: 3vh;
+    height: 3vh;
+    top: 0.4vh;
+    left: 1vh;
+}
+
+.TriesBar {
+    width: 23.8vh;
+    height: 2vh;
+    top: 1.0vh;
+    left: 1.9vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0.1vh, 1fr));
+    gap: 1vh;
+}
+
+.Tries {
+    border-radius: 0.4vh;
+    background-color: #2B3660;
+}
+
+#SkillCheckMinigame {
+    position: relative;
+    resize: both;
+    padding: 2vh;
+    padding-bottom: 1vh;
+    top: 20.0vh;
+    width: 100vh;
+    margin: auto;
+    background-color: #080C16;
+    box-shadow: 0vh 0vh 0.2vh black;
+    display: none;
+}
+
+.SkillCheckBar {
+    height: 50vh;
+    background-color: #491918;
+}
+
+.SC_CorrectKey {
+    position: relative;
+    width: auto;
+    top: 23vh;
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    text-shadow: 0vh 0vh 0.2vh black;
+}
+
+.TimerText {
+    position: relative;
+    width: 100%;
+    height: 2vh;
+    padding-top: 1vh;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+.SkillCheckCountdown {
+    position: absolute;
+    width: 100%;
+    height: 2vh;
+    top: 18vh;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13vh;
+    font-weight: 600;
+}
