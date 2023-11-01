@@ -1,6 +1,6 @@
 ### SN-Hacking
 A resource containing unique hacking minigames made by ProdigyRP
-FULL CREDITS TO: https://prodigyworld.net/
+#FULL CREDITS TO: https://prodigyworld.net/
 
 ## Memory Minigame
 ```
