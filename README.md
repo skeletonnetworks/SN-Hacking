@@ -1,3 +1,3 @@
 # SN-Hacking
 
-# A resource containing unique hacking minigames made by ProdigyRP
+A resource containing unique hacking minigames made by ProdigyRP
