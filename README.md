@@ -10,6 +10,8 @@ A resource containing unique hacking minigames made by ProdigyRP
         print("fail")
     end
 ```
+![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/eb4532ed-d6bc-4f22-a633-ac54ad3ef0e3)
+
 ## NumberUp Minigame
 ```
     local success = exports['SN-Hacking']:NumberUp(28, 2, 2, 40, 20) --NumberUp(keys(number), rounds(number), tries(number), time(seconds), shuffleTime(seconds))
@@ -19,6 +21,8 @@ A resource containing unique hacking minigames made by ProdigyRP
         print("fail")
     end
 ```
+![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/6a47018d-0602-4cc0-8a10-afa7f7cd90f9)
+
 ## SkillCheck Minigame
 
 ```
@@ -29,3 +33,4 @@ A resource containing unique hacking minigames made by ProdigyRP
         print("fail")
     end
 ```
+![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/dcad4620-5b4e-42bb-8ca0-4e6fd5859721)
