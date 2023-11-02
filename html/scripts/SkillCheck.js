@@ -1,10 +1,3 @@
-var clickSound = new Audio("./sounds/click.wav");
-var SuccessSound = new Audio("./sounds/success.wav");
-var FaliedSound = new Audio("./sounds/falied.wav");
-clickSound.volume = 0.50;
-SuccessSound.volume = 0.10;
-FaliedSound.volume = 0.20;
-
 var skillcheck_timeSpent = 0;
 var skillcheck_time = 5000;
 var skillcheck_bars = 20;
@@ -23,8 +16,6 @@ window.addEventListener('message', function(NUI) {
     const data = NUI.data;
     switch (data.Type) {
       case "SkillCheck":
-        clickSound.play();
-        clickSound.currentTime=0;
         skillcheck_time = data.time;
         skillcheck_bars = data.bars;
         skillcheck_safebars = data.safebars;
@@ -49,16 +40,22 @@ function StartSkillCheckCountDown() {
   document.getElementById("SkillCheckBarArea").innerHTML = NewHtml;
   $('#SkillCheckMinigame').show();
   $('#SC_CountdownScreen').show();
+  CountdownSound.play();
+  CountdownSound.currentTime=0;
   document.getElementById("SC_Countdown").innerHTML = countdown;
   var CountdownInt = setInterval(function() {
     countdown -= 1;
     if (countdown == -0) {
+      CountdownSound.play();
+      CountdownSound.currentTime=0;
       document.getElementById("SC_Countdown").innerHTML = 'GO!';
     } else if (countdown == -1) {
       clearInterval(CountdownInt);
       $('#SC_CountdownScreen').hide();
       StartSkillCheckGame()
     } else {
+      CountdownSound.play();
+      CountdownSound.currentTime=0;
       document.getElementById("SC_Countdown").innerHTML = countdown;
     }
   }, 1000);

@@ -223,3 +223,27 @@ body {
     font-size: 13vh;
     font-weight: 600;
 }
+
+#ThermiteMinigame {
+    position: relative;
+    padding: 2vh;
+    padding-bottom: 7vh;
+    top: 23.0vh;
+    width: 50vh;
+    height: 47vh;
+    margin: auto;
+    background-color: #080C16;
+    box-shadow: 0vh 0vh 0.2vh black;
+    display: none;
+}
+
+.ThermiteBox {
+    background-color: #0d1320;
+    border: 0.1vh solid #172136;
+    border-radius: 0.25vh;
+}
+
+.ThermiteBox:hover {
+    border: 0.2vh solid #819186;
+    border-radius: 0vh;
+}

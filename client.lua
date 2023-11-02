@@ -5,13 +5,13 @@ function MemoryGame(keysNeeded, rounds, time)
     if keysNeeded == nil or keysNeeded < 1 then keysNeeded = 5 end
     if keysNeeded > 12 then keysNeeded = 12 end
     if rounds == nil or rounds < 1 then rounds = 1 end
-    if time == nil or time < 1 then time = 10 end
+    if time == nil or time < 1 then time = 10000 end
     p = promise.new()
     SendNUIMessage({
         Type = 'MemoryGame',
         keysNeeded = keysNeeded,
 		rounds = rounds,
-        time = time * 1000,
+        time = time,
     })
     SetNuiFocus(true, true)
     inMinigameLoop()
@@ -24,16 +24,16 @@ function NumberUp(keyAmount, rounds, tries, time, shuffleTime)
     if keyAmount > 40 then keyAmount = 40 end
     if rounds == nil or rounds < 1 then rounds = 1 end
     if tries == nil or tries < 1 then tries = 1 end
-    if time == nil or time < 1 then time = 10 end
-    if shuffleTime == nil or shuffleTime < 1 then shuffleTime = 5 end
+    if time == nil or time < 1 then time = 10000 end
+    if shuffleTime == nil or shuffleTime < 1 then shuffleTime = 5000 end
     p = promise.new()
     SendNUIMessage({
         Type = 'NumberUp',
         keyAmount = keyAmount,
 		rounds = rounds,
         tries = tries,
-        time = time * 1000,
-        shuffleTime = shuffleTime * 1000,
+        time = time,
+        shuffleTime = shuffleTime,
     })
     SetNuiFocus(true, true)
     inMinigameLoop()
@@ -58,6 +58,29 @@ function SkillCheck(speed, time, keys, rounds, bars, safebars)
         rounds = rounds,
         bars = bars,
         safebars = safebars,
+    })
+    SetNuiFocus(true, true)
+    inMinigameLoop()
+    local result = Citizen.Await(p)
+    return result
+end
+
+function Thermite(boxes, correctboxes, time, lifes, rounds, showTime)
+    if boxes == nil or boxes < 2 then boxes = 7 end 
+    if correctboxes == nil or correctboxes < 1 then correctboxes = 5 end
+    if time == nil or time < 1 then time = 10000 end
+    if lifes == nil or lifes < 1 then lifes = 2 end
+    if rounds == nil or rounds < 1 then rounds = 2 end
+    if showTime == nil or showTime < 1 then showTime = 3000 end
+    p = promise.new()
+    SendNUIMessage({
+        Type = 'Thermite',
+        boxes = boxes,
+		correctboxes = correctboxes,
+        time = time,
+        lifes = lifes,
+        rounds = rounds,
+        showTime = showTime,
     })
     SetNuiFocus(true, true)
     inMinigameLoop()
@@ -98,11 +121,11 @@ end)
 exports("MemoryGame", MemoryGame)
 exports("NumberUp", NumberUp)
 exports("SkillCheck", SkillCheck)
-
+exports("Thermite", Thermite)
 
 RegisterCommand('MemoryGame', function()
-    --MemoryGame(keysNeeded, rounds, time)
-    local success = exports['SN-Hacking']:MemoryGame(3, 2, 10)
+    --MemoryGame(keysNeeded, rounds, time(ms))
+    local success = exports['SN-Hacking']:MemoryGame(3, 2, 10000)
     if success then
         print("success")
     else
@@ -111,8 +134,8 @@ RegisterCommand('MemoryGame', function()
 end)
 
 RegisterCommand('NumberUp', function()
-    --NumberUp(keys, rounds, tries, time, shuffleTime)
-    local success = exports['SN-Hacking']:NumberUp(28, 2, 2, 40, 20)
+    --NumberUp(keys, rounds, tries, time(ms), shuffleTime(ms))
+    local success = exports['SN-Hacking']:NumberUp(28, 2, 2, 40000, 20000)
     if success then
         print("success")
     else
@@ -123,6 +146,16 @@ end)
 RegisterCommand('SkillCheck', function()
     --SkillCheck(speed(ms), time(ms), keys(string or table), rounds(number), bars(number), safebars(number))
     local success = exports['SN-Hacking']:SkillCheck(50, 5000, {'w','a','s','w'}, 2, 20, 3)
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+end)
+
+RegisterCommand('Thermite', function()
+    --Thermite(boxes(number), correctboxes(number), time(ms), lifes(number), rounds(number), showTime(ms))
+    local success = exports['SN-Hacking']:Thermite(7, 5, 10000, 2, 2, 3000)
     if success then
         print("success")
     else

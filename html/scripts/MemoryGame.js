@@ -1,6 +1,8 @@
-var clickSound = new Audio("./sounds/click.wav");
-var SuccessSound = new Audio("./sounds/success.wav");
-var FaliedSound = new Audio("./sounds/falied.wav");
+clickSound = new Audio("./sounds/click.wav");
+SuccessSound = new Audio("./sounds/success.wav");
+FaliedSound = new Audio("./sounds/falied.wav");
+CountdownSound = new Audio("./sounds/countdown.mp3");
+CountdownSound.volume = 0.20;
 clickSound.volume = 0.50;
 SuccessSound.volume = 0.10;
 FaliedSound.volume = 0.20;
@@ -15,8 +17,6 @@ window.addEventListener('message', function(NUI) {
     const data = NUI.data;
     switch (data.Type) {
       case "MemoryGame":
-        clickSound.play();
-        clickSound.currentTime=0;
         mem_keysNeeded = data.keysNeeded;
         mem_rounds = data.rounds;
         mem_roundTime = data.time;
@@ -29,17 +29,23 @@ function StartMemoryCountDown() {
   var countdown = 3
   $('#MemoryMinigame').show();
   $('#Mem_CountdownScreen').show();
+  CountdownSound.play();
+  CountdownSound.currentTime=0;
   document.getElementById("CurrentKeys").innerHTML = 'NO INPUT';
   document.getElementById("Mem_Countdown").innerHTML = countdown;
   var CountdownInt = setInterval(function() {
     countdown -= 1;
     if (countdown == -0) {
+      CountdownSound.play();
+      CountdownSound.currentTime=0;
       document.getElementById("Mem_Countdown").innerHTML = 'GO!';
     } else if (countdown == -1) {
       clearInterval(CountdownInt);
       $('#Mem_CountdownScreen').hide();
       StartMemoryGame()
     } else {
+      CountdownSound.play();
+      CountdownSound.currentTime=0;
       document.getElementById("Mem_Countdown").innerHTML = countdown;
     }
   }, 1000);

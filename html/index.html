@@ -93,9 +93,22 @@
                 </div>
             </div>
         </div>
+        <div id="ThermiteMinigame">
+            <div class="ProgressbarBase" style="width: 100%;"><div class="Progressbar"></div></div>
+            <div id="ThermiteBoxAreas" class="KeyButtonArea"  style="gap: 0.4vh; row-gap: 0.4vh; height: 100%; width: 100%;"></div>
+            <div id="Thermite_CountdownScreen"  class="BlackBackground"><div id="Thermite_Countdown" class="SkillCheckCountdown">3</div></div>
+            <div class="ProgressbarBase" style="height: 0.0vh; background-color: #264154; width: 100%;"><div id="Thermite_showTime" class="Progressbar" style="background-color: #74ABC1;"></div></div>
+            <div id="Thermite_ResultScreen" class="BlackBackground">
+                <div id="Thermite_ResultBanner" class="ResultBanner" style="top: 23vh;">
+                    <img id="Thermite_ResultIcon" class="ResultIcon" src="./images/check.png">
+                    <div id="Thermite_ResultText" class="ResultText">Success!</div>
+                </div>
+            </div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="./scripts/MemoryGame.js" type="text/javascript"></script>
         <script src="./scripts/NumberUp.js" type="text/javascript"></script>
         <script src="./scripts/SkillCheck.js" type="text/javascript"></script>
+        <script src="./scripts/Thermite.js" type="text/javascript"></script>
     </body>
 </html>

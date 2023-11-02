@@ -1,11 +1,3 @@
-var listening = false
-var clickSound = new Audio("./sounds/click.wav");
-var SuccessSound = new Audio("./sounds/success.wav");
-var FaliedSound = new Audio("./sounds/falied.wav");
-clickSound.volume = 0.50;
-SuccessSound.volume = 0.10;
-FaliedSound.volume = 0.20;
-
 const num_keysClicked = []
 const num_keysPlaced = []
 var num_keyAmount = 16;
@@ -19,8 +11,6 @@ window.addEventListener('message', function(NUI) {
   const data = NUI.data;
   switch (data.Type) {
     case "NumberUp":
-      clickSound.play();
-      clickSound.currentTime=0;
       num_keyAmount = data.keyAmount;
       num_rounds = data.rounds;
       num_tries = data.tries;
@@ -47,18 +37,23 @@ function StartNumberUpCountDown() {
   for (let i = 1; i < num_keyAmount; i++) {
     NewHtml += '<div class="Button"></div>';
   };
+  CountdownSound.play();
+  CountdownSound.currentTime=0;
   document.getElementById("Num_keyArea").innerHTML = NewHtml;
-  document.getElementById("CurrentKeys").innerHTML = 'NO INPUT';
   document.getElementById("Num_Countdown").innerHTML = countdown;
   var CountdownInt = setInterval(function() {
     countdown -= 1;
     if (countdown == -0) {
+      CountdownSound.play();
+      CountdownSound.currentTime=0;
       document.getElementById("Num_Countdown").innerHTML = 'GO!';
     } else if (countdown == -1) {
       clearInterval(CountdownInt);
       $('#Num_CountdownScreen').hide();
       StartNumberUpGame()
     } else {
+      CountdownSound.play();
+      CountdownSound.currentTime=0;
       document.getElementById("Num_Countdown").innerHTML = countdown;
     }
   }, 1000);
