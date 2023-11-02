@@ -96,6 +96,7 @@ function ThermiteClick(id) {
   if (thermite_listening) {
     var elem = document.getElementById("ThermiteBox_"+id)
     if (elem.value == true) {
+      elem.style.pointerEvents = 'none';
       clickSound.play();
       clickSound.currentTime=0;
       elem.style.backgroundColor = '#257cad';
