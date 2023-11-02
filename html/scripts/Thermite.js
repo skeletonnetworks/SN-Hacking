@@ -63,7 +63,6 @@ function StartThermiteGame() {
   while(thermite_chosen_boxes.length < thermite_correctboxes){
     var boxID = Math.floor(Math.random() * (thermite_boxes * thermite_boxes)) + 1;
     if(thermite_chosen_boxes.indexOf(boxID) === -1) {
-      console.log(boxID);
       document.getElementById("ThermiteBox_"+boxID).style.backgroundColor = '#257cad';
       document.getElementById("ThermiteBox_"+boxID).value = true;
       thermite_chosen_boxes.push(boxID);

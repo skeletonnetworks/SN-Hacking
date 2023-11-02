@@ -49,3 +49,15 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 ```
 ![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/7c1060da-bad4-4285-bcdc-1a6664fcc3a6)
 
+## Skill Bar Minigame
+
+```
+    local success = exports['SN-Hacking']:SkillBar(3000, 10, 2) --SkillBar(duration aka speed(milliseconds), width%(number), rounds(number))
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+```
+![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/9056f766-f708-4dfa-98c8-1e96ac4a4a94)
+

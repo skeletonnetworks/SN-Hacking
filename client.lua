@@ -87,6 +87,22 @@ function Thermite(boxes, correctboxes, time, lifes, rounds, showTime)
     local result = Citizen.Await(p)
     return result
 end
+function SkillBar()
+    if duration == nil or duration < 1 then duration = 3000 end
+    if width == nil or width < 1 then width = 10 end
+    if rounds == nil or rounds < 1 then rounds = 2 end
+    p = promise.new()
+    SendNUIMessage({
+        Type = 'SkillBar',
+        duration = duration,
+		width = width,
+        rounds = rounds,
+    })
+    SetNuiFocus(true, true)
+    inMinigameLoop()
+    local result = Citizen.Await(p)
+    return result
+end
 
 function inMinigameLoop()
     if inMinigame then return end
@@ -122,6 +138,7 @@ exports("MemoryGame", MemoryGame)
 exports("NumberUp", NumberUp)
 exports("SkillCheck", SkillCheck)
 exports("Thermite", Thermite)
+exports("SkillBar", SkillBar)
 
 RegisterCommand('MemoryGame', function()
                                         --MemoryGame(keysNeeded, rounds, time(mmillisecondss))
@@ -156,6 +173,16 @@ end)
 RegisterCommand('Thermite', function()
                                         --Thermite(boxes(number), correctboxes(number), time(milliseconds), lifes(number), rounds(number), showTime(milliseconds))
     local success = exports['SN-Hacking']:Thermite(7, 5, 10000, 2, 2, 3000)
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+end)
+
+RegisterCommand('SkillBar', function()
+                                        --SkillBar(duration aka speed(milliseconds), width%(number), rounds(number))
+    local success = exports['SN-Hacking']:SkillBar(3000, 10, 2)
     if success then
         print("success")
     else

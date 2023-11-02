@@ -247,3 +247,31 @@ body {
     border: 0.2vh solid #819186;
     border-radius: 0vh;
 }
+
+#SkillBarMinigame {
+    position: relative;
+    top: 90vh;
+    width: 50vh;
+    height: 4vh;
+    margin: auto;
+    display: none;
+}
+
+.SkillBarText {
+    position: relative;
+    width: 100%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vh;
+    font-weight: 600;
+    padding-bottom: 0.5vh;
+    text-shadow: 0vh 0vh 0.5vh black;
+}
+
+.PBSkillArea {
+    position: absolute;
+    top: 0vh;
+    height: 100%;
+    width: 0%;
+    background-color: #769719;
+}
