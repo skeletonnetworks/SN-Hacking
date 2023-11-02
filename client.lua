@@ -124,7 +124,7 @@ exports("SkillCheck", SkillCheck)
 exports("Thermite", Thermite)
 
 RegisterCommand('MemoryGame', function()
-    --MemoryGame(keysNeeded, rounds, time(ms))
+                                        --MemoryGame(keysNeeded, rounds, time(mmillisecondss))
     local success = exports['SN-Hacking']:MemoryGame(3, 2, 10000)
     if success then
         print("success")
@@ -134,7 +134,7 @@ RegisterCommand('MemoryGame', function()
 end)
 
 RegisterCommand('NumberUp', function()
-    --NumberUp(keys, rounds, tries, time(ms), shuffleTime(ms))
+                                        --NumberUp(keys, rounds, tries, time(milliseconds), shuffleTime(milliseconds))
     local success = exports['SN-Hacking']:NumberUp(28, 2, 2, 40000, 20000)
     if success then
         print("success")
@@ -144,7 +144,7 @@ RegisterCommand('NumberUp', function()
 end)
 
 RegisterCommand('SkillCheck', function()
-    --SkillCheck(speed(ms), time(ms), keys(string or table), rounds(number), bars(number), safebars(number))
+                                        --SkillCheck(speed(milliseconds), time(milliseconds), keys(string or table), rounds(number), bars(number), safebars(number))
     local success = exports['SN-Hacking']:SkillCheck(50, 5000, {'w','a','s','w'}, 2, 20, 3)
     if success then
         print("success")
@@ -154,7 +154,7 @@ RegisterCommand('SkillCheck', function()
 end)
 
 RegisterCommand('Thermite', function()
-    --Thermite(boxes(number), correctboxes(number), time(ms), lifes(number), rounds(number), showTime(ms))
+                                        --Thermite(boxes(number), correctboxes(number), time(milliseconds), lifes(number), rounds(number), showTime(milliseconds))
     local success = exports['SN-Hacking']:Thermite(7, 5, 10000, 2, 2, 3000)
     if success then
         print("success")
