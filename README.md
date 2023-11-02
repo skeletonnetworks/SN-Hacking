@@ -40,7 +40,7 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 ## Thermite Minigame
 
 ```
-local success = exports['SN-Hacking']:Thermite(7, 5, 10000, 2, 2, 3000) --Thermite(boxes(number), correctboxes(number), time(ms), lifes(number), rounds(number), showTime(ms))
+    local success = exports['SN-Hacking']:Thermite(7, 5, 10000, 2, 2, 3000) --Thermite(boxes(number), correctboxes(number), time(ms), lifes(number), rounds(number), showTime(ms))
     if success then
         print("success")
     else
