@@ -36,3 +36,16 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
     end
 ```
 ![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/dcad4620-5b4e-42bb-8ca0-4e6fd5859721)
+
+## Thermite Minigame
+
+```
+    local success = exports['SN-Hacking']:Thermite(7, 5, 10000, 2, 2, 3000) --Thermite(boxes(number), correctboxes(number), time(ms), lifes(number), rounds(number), showTime(ms))
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+```
+![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/7c1060da-bad4-4285-bcdc-1a6664fcc3a6)
+
