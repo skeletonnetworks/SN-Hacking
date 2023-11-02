@@ -5,7 +5,7 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 
 ## Memory Minigame
 ```
-    local success = exports['SN-Hacking']:MemoryGame(3, 2, 10) --MemoryGame(keysNeeded(number), rounds(number), time(seconds))
+    local success = exports['SN-Hacking']:MemoryGame(3, 2, 10) --MemoryGame(keysNeeded(number), rounds(number), time(milliseconds))
     if success then
         print("success")
     else
@@ -16,7 +16,7 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 
 ## Number Up Minigame
 ```
-    local success = exports['SN-Hacking']:NumberUp(28, 2, 2, 40, 20) --NumberUp(keys(number), rounds(number), tries(number), time(seconds), shuffleTime(seconds))
+    local success = exports['SN-Hacking']:NumberUp(28, 2, 2, 40, 20) --NumberUp(keys(number), rounds(number), tries(number), time(milliseconds), shuffleTime(milliseconds))
     if success then
         print("success")
     else
@@ -28,7 +28,7 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 ## Skill Check Minigame
 
 ```
-    local success = exports['SN-Hacking']:SkillCheck(50, 5000, {'w','a','s','w'}, 2, 20, 3) --SkillCheck(speed(ms), time(ms), keys(string or table), rounds(number), bars(number), safebars(number))
+    local success = exports['SN-Hacking']:SkillCheck(50, 5000, {'w','a','s','w'}, 2, 20, 3) --SkillCheck(speed(milliseconds), time(milliseconds), keys(string or table), rounds(number), bars(number), safebars(number))
     if success then
         print("success")
     else
@@ -40,7 +40,7 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 ## Thermite Minigame
 
 ```
-    local success = exports['SN-Hacking']:Thermite(7, 5, 10000, 2, 2, 3000) --Thermite(boxes(number), correctboxes(number), time(ms), lifes(number), rounds(number), showTime(ms))
+    local success = exports['SN-Hacking']:Thermite(7, 5, 10000, 2, 2, 3000) --Thermite(boxes(number), correctboxes(number), time(milliseconds), lifes(number), rounds(number), showTime(milliseconds))
     if success then
         print("success")
     else
