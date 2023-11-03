@@ -1,12 +1,3 @@
-clickSound = new Audio("./sounds/click.wav");
-SuccessSound = new Audio("./sounds/success.wav");
-FaliedSound = new Audio("./sounds/falied.wav");
-CountdownSound = new Audio("./sounds/countdown.mp3");
-CountdownSound.volume = 0.20;
-clickSound.volume = 0.50;
-SuccessSound.volume = 0.10;
-FaliedSound.volume = 0.20;
-
 var mem_keysNeeded = 5
 var mem_rounds = 2
 var mem_roundTime = 10000
@@ -101,10 +92,6 @@ function ButtonClicked(num) {
       EndMemoryGame(false)
     };
   };
-};
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
 };
 
 function EndMemoryGame(bool) {

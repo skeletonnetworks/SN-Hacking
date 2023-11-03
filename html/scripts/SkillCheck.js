@@ -62,10 +62,10 @@ function StartSkillCheckCountDown() {
 };
 
 function StartSkillCheckGame() {
-  skillcheck_timeSpent = 0
-  skillcheck_barPosition = 0
-  skillcheck_barMoving = 1
-  skillcheck_running = true
+  skillcheck_timeSpent = 0;
+  skillcheck_barPosition = 0;
+  skillcheck_barMoving = 1;
+  skillcheck_running = true;
   var SafeKeyStart = Math.floor(Math.random() * (skillcheck_bars - skillcheck_safebars)) + 1;
   var MiddleKey = Math.round(skillcheck_safebars / 2)
   var i = 0
@@ -107,20 +107,6 @@ function StartSkillCheckGame() {
       document.getElementById("SC_Timer").innerHTML = (skillcheck_timeSpent * 0.001).toFixed(2).toString()+'s / '+(skillcheck_time * 0.001).toFixed(2).toString()+'s';
     }
   }, 100);
-};
-
-document.onkeyup = function(event) {
-  event = event || window.event;
-  var charCode = event.keyCode || event.which;
-  if (skillcheck_running) {
-    clickSound.play();
-    clickSound.currentTime=0;
-    if (document.getElementById('SC_Bar_'+skillcheck_barPosition).value == true && String.fromCharCode(charCode) == skillcheck_correctKey.toUpperCase()) {
-      EndSkillCheckGame(true)
-    } else {
-      EndSkillCheckGame(false)
-    };
-  };
 };
 
 function EndSkillCheckGame(bool) {

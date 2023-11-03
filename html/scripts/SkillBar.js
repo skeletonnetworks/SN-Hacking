@@ -16,26 +16,6 @@ window.addEventListener('message', function(NUI) {
     }
 });
 
-document.onkeyup = function(event) {
-  event = event || window.event;
-  var charCode = event.keyCode || event.which;
-  if (skillbar_listening) {
-    if (charCode == 69) {
-      CheckSkillBar()
-    };
-    if (charCode == 27) {
-      $('.Progressbar').stop().css({"background-color": "#df2020"}).animate({
-        width: '100%'
-      }, {
-        duration: parseInt(100),
-        complete: function() {
-          EndSkillBar(false)
-        }
-      });
-    };
-  };
-};
-
 function StartSkillBarGame() {
   $('#SkillBarMinigame').fadeIn();
   skillbar_listening = true;
