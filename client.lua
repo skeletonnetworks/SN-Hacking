@@ -87,7 +87,7 @@ function Thermite(boxes, correctboxes, time, lifes, rounds, showTime)
     local result = Citizen.Await(p)
     return result
 end
-function SkillBar()
+function SkillBar(duration, width, rounds)
     if duration == nil or duration < 1 then duration = 3000 end
     if width == nil or width < 1 then width = 10 end
     if rounds == nil or rounds < 1 then rounds = 2 end
