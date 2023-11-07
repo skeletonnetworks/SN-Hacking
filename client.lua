@@ -68,15 +68,35 @@ function Thermite(boxes, correctboxes, time, lifes, rounds, showTime)
     })
 end
 
-function SkillBar(duration, width, rounds)
-    if duration == nil or (type(duration) ~= 'table' and  duration < 1) then duration = 3000 end
+function SkillBar(time, width, rounds)
+    if time == nil or (type(time) ~= 'table' and  time < 1) then time = 3000 end
     if width == nil or width < 1 then width = 10 end
     if rounds == nil or rounds < 1 then rounds = 2 end
     return StartMinigame({
         Type = 'SkillBar',
-        duration = duration,
+        time = time,
 		width = width,
         rounds = rounds,
+    })
+end
+
+function ShowNumber(code, time)
+    if code == nil then return false end
+    if time == nil or time < 1 then time = 3000 end
+    return StartMinigame({
+        Type = 'KeypadShowNumber',
+        code = code,
+		time = time,
+    })
+end
+
+function KeyPad(code, time)
+    if code == nil then return false end
+    if time == nil or time < 1 then time = 3000 end
+    return StartMinigame({
+        Type = 'KeypadType',
+        code = code,
+		time = time,
     })
 end
 
@@ -111,6 +131,8 @@ exports("NumberUp", NumberUp)
 exports("SkillCheck", SkillCheck)
 exports("Thermite", Thermite)
 exports("SkillBar", SkillBar)
+exports("ShowNumber", ShowNumber)
+exports("KeyPad", KeyPad)
 
 RegisterCommand('MemoryGame', function()
                                         --MemoryGame(keysNeeded, rounds, time(mmillisecondss))
@@ -153,9 +175,24 @@ RegisterCommand('Thermite', function()
 end)
 
 RegisterCommand('SkillBar', function()
-                                        --SkillBar(duration(milliseconds or table{min(milliseconds), max(milliseconds)}), width%(number), rounds(number))
-    --local success = exports['SN-Hacking']:SkillBar({2000, 3000}, 10, 2)
+                                        --SkillBar(time(milliseconds or table{min(milliseconds), max(milliseconds)}), width%(number), rounds(number))
     local success = exports['SN-Hacking']:SkillBar({2000, 3000}, 10, 2)
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+end)
+
+
+RegisterCommand('ShowNumber', function()
+                        --ShowNumber(code(number), time(milliseconds))
+    exports['SN-Hacking']:ShowNumber(999, 3000)
+end)
+
+RegisterCommand('KeyPad', function()
+                                        --KeyPad(code(number), time(milliseconds))
+    local success = exports['SN-Hacking']:KeyPad(999, 3000)
     if success then
         print("success")
     else

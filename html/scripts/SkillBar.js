@@ -1,16 +1,14 @@
 var skillbar_duration = 3000;
 var skillbar_left = 0;
 var skillbar_width = 10;
-var skillbar_rounds = 2;
-var skillbar_listening = false;
 
 window.addEventListener('message', function(NUI) {
     const data = NUI.data;
     switch (data.Type) {
       case "SkillBar":
-        skillbar_duration = data.duration;
+        skillbar_duration = data.time;
         skillbar_width = data.width;
-        skillbar_rounds = data.rounds;
+        rounds = data.rounds;
         StartSkillBarGame()
       break;
     }
@@ -18,7 +16,7 @@ window.addEventListener('message', function(NUI) {
 
 function StartSkillBarGame() {
   $('#SkillBarMinigame').fadeIn();
-  skillbar_listening = true;
+  skillbar_running = true;
   skillbar_left = getRandomInt(15, 100 - skillbar_width);
   var duration = skillbar_duration
   if (typeof duration == 'object') {
@@ -47,8 +45,8 @@ function CheckSkillBar() {
   var CurrentWidth = (($('#SkillBar').width() / $('#SkillbarBase').width()) * 100);
   var Max = skillbar_left + skillbar_width;
   if (CurrentWidth >= skillbar_left && CurrentWidth <= Max) {
-    skillbar_rounds -= 1
-    if (skillbar_rounds <= 0) {
+    rounds -= 1
+    if (rounds <= 0) {
       $('.Progressbar').stop().css({"background-color": "#769719"}).animate({
         width: '100%'
       }, {
@@ -73,7 +71,7 @@ function CheckSkillBar() {
 }
 
 function EndSkillBar(bool) {
-  skillbar_listening = false;
+  skillbar_running = false;
   setTimeout(function() {
     if (bool) {
       $.post(`https://SN-Hacking/Success`);

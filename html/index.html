@@ -2,108 +2,43 @@
 <html>
     <head>
         <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
     </head>
     <body>
-        <div id="NumberUpMinigame">
+        <div id="NumberUpMinigame" class="MinigameBackground" style="top: 28.0vh; left: 75.4vh;">
             <div id="Num_TriesBar"class="TriesBar"></div>
-            <div class="ProgressbarBase" style="top: 4vh;">
-                <div id="Num_Progressbar" class="Progressbar" style="background-color: #2B3660;"></div>
-            </div>
+            <div class="ProgressbarBase" style="top: 4vh;"><div id="Num_Progressbar" class="Progressbar" style="background-color: #2B3660;"></div></div>
             <div id="Num_keyArea" class="KeyButtonArea" style="grid-template-columns: repeat(4, 1fr);"></div>
-            <div class="ProgressbarBase" style="height: 0.5vh; background-color: #264154;">
-                <div id="Num_shuffleTime" class="Progressbar" style="background-color: #74ABC1;"></div>
-            </div>
-            <div id="Num_CountdownScreen" class="BlackBackground">
-                <div class="Countdown" style="top: 35%; font-size: 3vh;">PREPARING DEVICE</div>
-                <div id="Num_Countdown" class="Countdown" style="top: 50%;">3</div>
-            </div>
-            <div id="ResultScreen" class="BlackBackground">
-                <div id="ResultBanner" class="ResultBanner">
-                    <img id="ResultIcon" class="ResultIcon" src="./images/check.png">
-                    <div id="ResultText" class="ResultText">Success!</div>
-                </div>
-            </div>
+            <div class="ProgressbarBase" style="height: 0.5vh; background-color: #264154;"><div id="Num_shuffleTime" class="Progressbar" style="background-color: #74ABC1;"></div></div>
         </div>
-        <div id="MemoryMinigame">
+        <div id="MemoryMinigame" class="MinigameBackground" style="top: 33.4vh; left: 75.4vh;">
            <div id="CurrentKeys" class="CurrentKeys">NO INPUT</div>
             <div class="ProgressbarBase">
                 <div class="Progressbar"></div>
             </div>
             <div class="KeyButtonArea"  style="grid-template-columns: repeat(3, 1fr);">
-                <div class="Button" id="Button1" style="left:0vh; top:0vh;" onclick="ButtonClicked(1)">
-                    <div class="ButtonFont">1</div>
-                </div>
-                <div class="Button" id="Button2" style="left:33.33%; top:0vh;" onclick="ButtonClicked(2)">
-                    <div class="ButtonFont">2</div>
-                </div>
-                <div class="Button" id="Button3" style="left:66.66%; top:0vh;" onclick="ButtonClicked(3)">
-                    <div class="ButtonFont">3</div>
-                </div>
-                <div class="Button" id="Button4" style="left:0vh; top:25%;" onclick="ButtonClicked(4)">
-                    <div class="ButtonFont">4</div>
-                </div>
-                <div class="Button" id="Button5" style="left:33.33%; top:25%;" onclick="ButtonClicked(5)">
-                    <div class="ButtonFont">5</div>
-                </div>
-                <div class="Button" id="Button6" style="left:66.66%; top:25%;" onclick="ButtonClicked(6)">
-                    <div class="ButtonFont">6</div>
-                </div>
-
-                <div class="Button" id="Button7" style="left:0vh; top:50%;" onclick="ButtonClicked(7)">
-                    <div class="ButtonFont">7</div>
-                </div>
-                <div class="Button" id="Button8" style="left:33.33%; top:50%;" onclick="ButtonClicked(8)">
-                    <div class="ButtonFont">8</div>
-                </div>
-                <div class="Button" id="Button9" style="left:66.66%; top:50%;" onclick="ButtonClicked(9)">
-                    <div class="ButtonFont">9</div>
-                </div>
-
-                <div class="Button" id="Button10" style="left:0vh; top:75%;" onclick="ButtonClicked(10)">
-                    <div class="ButtonFont">10</div>
-                </div>
-                <div class="Button" id="Button11" style="left:33.33%; top:75%;" onclick="ButtonClicked(11)">
-                    <div class="ButtonFont">11</div>
-                </div>
-                <div class="Button" id="Button12" style="left:66.66%; top:75%;" onclick="ButtonClicked(12)">
-                    <div class="ButtonFont">12</div>
-                </div>
-            </div>
-            <div id="Mem_CountdownScreen" class="BlackBackground">
-                <div class="Countdown" id="Mem_Countdown">3</div>
-            </div>
-            <div id="Mem_ResultScreen" class="BlackBackground">
-                <div id="Mem_ResultBanner" class="ResultBanner">
-                    <img id="Mem_ResultIcon" class="ResultIcon" src="./images/check.png">
-                    <div id="Mem_ResultText" class="ResultText">Success!</div>
-                </div>
+                <div class="Button" id="Button1" style="left:0vh; top:0vh;" onclick="ButtonClicked(1)"><div class="ButtonFont">1</div></div>
+                <div class="Button" id="Button2" style="left:33.33%; top:0vh;" onclick="ButtonClicked(2)"><div class="ButtonFont">2</div></div>
+                <div class="Button" id="Button3" style="left:66.66%; top:0vh;" onclick="ButtonClicked(3)"><div class="ButtonFont">3</div></div>
+                <div class="Button" id="Button4" style="left:0vh; top:25%;" onclick="ButtonClicked(4)"><div class="ButtonFont">4</div></div>
+                <div class="Button" id="Button5" style="left:33.33%; top:25%;" onclick="ButtonClicked(5)"><div class="ButtonFont">5</div></div>
+                <div class="Button" id="Button6" style="left:66.66%; top:25%;" onclick="ButtonClicked(6)"><div class="ButtonFont">6</div></div>
+                <div class="Button" id="Button7" style="left:0vh; top:50%;" onclick="ButtonClicked(7)"><div class="ButtonFont">7</div></div>
+                <div class="Button" id="Button8" style="left:33.33%; top:50%;" onclick="ButtonClicked(8)"><div class="ButtonFont">8</div></div>
+                <div class="Button" id="Button9" style="left:66.66%; top:50%;" onclick="ButtonClicked(9)"><div class="ButtonFont">9</div></div>
+                <div class="Button" id="Button10" style="left:0vh; top:75%;" onclick="ButtonClicked(10)"><div class="ButtonFont">10</div></div>
+                <div class="Button" id="Button11" style="left:33.33%; top:75%;" onclick="ButtonClicked(11)"><div class="ButtonFont">11</div></div>
+                <div class="Button" id="Button12" style="left:66.66%; top:75%;" onclick="ButtonClicked(12)"><div class="ButtonFont">12</div></div>
             </div>
         </div>
-        <div id="SkillCheckMinigame">
-            <div id="SkillCheckBarArea" class="KeyButtonArea"  style="gap: 0.5vh; width: 100%;">
-            </div>
+        <div id="SkillCheckMinigame" class="MinigameBackground" style="position: relative; padding-bottom: 1vh; top: 20.0vh; width: 100vh; margin: auto;">
+            <div id="SkillCheckBarArea" class="KeyButtonArea"  style="gap: 0.5vh; width: 100%;"></div>
             <div id="SC_Timer" class="TimerText">0s / 4.25s</div>
-            <div id="SC_CountdownScreen"  class="BlackBackground">
-                <div id="SC_Countdown" class="SkillCheckCountdown">3</div>
-            </div>
-            <div id="SC_ResultScreen" class="BlackBackground">
-                <div id="SC_ResultBanner" class="ResultBanner" style="top: 23vh;">
-                    <img id="SC_ResultIcon" class="ResultIcon" src="./images/check.png">
-                    <div id="SC_ResultText" class="ResultText">Success!</div>
-                </div>
-            </div>
         </div>
-        <div id="ThermiteMinigame">
+        <div id="ThermiteMinigame" class="MinigameBackground" style="position: relative; padding-bottom: 7vh; top: 23.0vh; width: 50vh; height: 47vh; margin: auto;">
             <div class="ProgressbarBase" style="width: 100%;"><div class="Progressbar"></div></div>
             <div id="ThermiteBoxAreas" class="KeyButtonArea"  style="gap: 0.4vh; row-gap: 0.4vh; height: 100%; width: 100%;"></div>
-            <div id="Thermite_CountdownScreen"  class="BlackBackground"><div id="Thermite_Countdown" class="SkillCheckCountdown">3</div></div>
-            <div class="ProgressbarBase" style="height: 0.0vh; background-color: #264154; width: 100%;"><div id="Thermite_showTime" class="Progressbar" style="background-color: #74ABC1;"></div></div>
-            <div id="Thermite_ResultScreen" class="BlackBackground">
-                <div id="Thermite_ResultBanner" class="ResultBanner" style="top: 23vh;">
-                    <img id="Thermite_ResultIcon" class="ResultIcon" src="./images/check.png">
-                    <div id="Thermite_ResultText" class="ResultText">Success!</div>
-                </div>
-            </div>
+            <div class="ProgressbarBase" style="height: 0.5vh; background-color: #264154; width: 100%;"><div id="Thermite_showTime" class="Progressbar" style="background-color: #74ABC1;"></div></div>
         </div>
         <div id="SkillBarMinigame">
             <div class="SkillBarText">Press [E] When bar Hits highlighted Area</div>
@@ -112,6 +47,32 @@
                 <div id="SkillBar" class="Progressbar" style="position: relative; top: 0vh; width: 25%; background-color: #257cad;"></div>
             </div>
         </div>
+        <div id="ShowKeyCode" class="MinigameBackground" style="position: relative; top: 50vh; width: 40vh; margin: auto; border: 1vh solid #172136;">
+            <div id="KeyCode" class="KeyCode"></div>
+            <div class="ProgressbarBase" style="width: 80%; height: 0.5vh; left: 0vh; margin: auto; margin-top: 1vh;">
+                <div class="Progressbar" style="position: relative; top: 0vh; width: 25%;"></div>
+            </div>
+        </div>
+        <div id="KeyCodePad"class="MinigameBackground" style="top: 33.4vh; left: 75.4vh;">
+            <div id="KPCurrentKeys" class="CurrentKeys">NO INPUT</div>
+            <div class="ProgressbarBase" style="height: 0.5vh;">
+                <div class="Progressbar"></div>
+            </div>
+            <div class="KeyButtonArea"  style="grid-template-columns: repeat(3, 3fr); padding-top: 0.5vh;">
+                <div class="Button" id="KPButton1" style="left:0vh; top:0vh;" onclick="ButtonClicked(1)"><div class="ButtonFont">1</div></div>
+                <div class="Button" id="KPButton2" style="left:33.33%; top:0vh;" onclick="ButtonClicked(2)"><div class="ButtonFont">2</div></div>
+                <div class="Button" id="KPButton3" style="left:66.66%; top:0vh;" onclick="ButtonClicked(3)"><div class="ButtonFont">3</div></div>
+                <div class="Button" id="KPButton4" style="left:0vh; top:25%;" onclick="ButtonClicked(4)"><div class="ButtonFont">4</div></div>
+                <div class="Button" id="KPButton5" style="left:33.33%; top:25%;" onclick="ButtonClicked(5)"><div class="ButtonFont">5</div></div>
+                <div class="Button" id="KPButton6" style="left:66.66%; top:25%;" onclick="ButtonClicked(6)"><div class="ButtonFont">6</div></div>
+                <div class="Button" id="KPButton7" style="left:0vh; top:50%;" onclick="ButtonClicked(7)"><div class="ButtonFont">7</div></div>
+                <div class="Button" id="KPButton8" style="left:33.33%; top:50%;" onclick="ButtonClicked(8)"><div class="ButtonFont">8</div></div>
+                <div class="Button" id="KPButton9" style="left:66.66%; top:50%;" onclick="ButtonClicked(9)"><div class="ButtonFont">9</div></div>
+                <div class="Button" id="KPButton10" style="left:0vh; top:75%;" onclick="ButtonClicked(10)"><div class="ButtonFont">0</div></div>
+            </div>
+            <div id="KPEnter" class="enter" onclick="KPEnter()"><div class="ButtonFont" style="top:0.4vh; color: white;">ENTER</div></div>
+            <div id="KPBackspace" class="backspace" onclick="KPBackspace()"><i class="fa-solid fa-delete-left"></i></div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="./scripts/Utils.js"></script>
         <script src="./scripts/MemoryGame.js"></script>
@@ -119,5 +80,6 @@
         <script src="./scripts/SkillCheck.js"></script>
         <script src="./scripts/Thermite.js"></script>
         <script src="./scripts/SkillBar.js"></script>
+        <script src="./scripts/KeyCode.js"></script>
     </body>
 </html>

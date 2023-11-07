@@ -12,31 +12,10 @@ body {
     user-select: none;
 }
 
-.BackgroundImg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0vh;
-    left: 0vh;
-}
-
-#MemoryMinigame {
+.MinigameBackground {
     position: absolute;
     resize: both;
     padding: 2vh;
-    top: 33.4vh;
-    left: 75.4vh;
-    background-color: #080C16;
-    box-shadow: 0vh 0vh 0.2vh black;
-    display: none;
-}
-
-#NumberUpMinigame {
-    position: absolute;
-    resize: both;
-    padding: 2vh;
-    top: 28.0vh;
-    left: 75.4vh;
     background-color: #080C16;
     box-shadow: 0vh 0vh 0.2vh black;
     display: none;
@@ -49,7 +28,6 @@ body {
     top: 0vh;
     left: 0vh;
     background-color: rgba(0, 0, 0, 0.3);
-    display: none;
 }
 
 .ProgressbarBase {
@@ -59,6 +37,7 @@ body {
     left: 1.9vh;
     border-radius: 0.4vh;
     background-color: #2B3D07;
+    overflow: hidden;
 }
 
 .Progressbar {
@@ -66,7 +45,6 @@ body {
     height: 100%;
     top: 0vh;
     left: 0vh;
-    border-radius: 0.4vh;
     background-color: #769719;
 }
 
@@ -124,6 +102,18 @@ body {
     color: white;
 }
 
+.Countdown2 {
+    position: absolute;
+    width: 100%;
+    height: 2vh;
+    top: 20vh;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13vh;
+    font-weight: 600;
+}
+
 .ResultBanner {
     position: relative;
     width: 75%;
@@ -131,7 +121,7 @@ body {
     top: 13vh;
     margin: auto;
     background-color: #769719;
-    display: block;
+    overflow: hidden;
 }
 
 .ResultText {
@@ -144,15 +134,6 @@ body {
     font-family: fantasy;
     font-size: 1.75vh;
     color: white;
-    overflow: hidden;
-}
-
-.ResultIcon {
-    position: absolute;
-    width: 3vh;
-    height: 3vh;
-    top: 0.4vh;
-    left: 1vh;
 }
 
 .TriesBar {
@@ -168,19 +149,6 @@ body {
 .Tries {
     border-radius: 0.4vh;
     background-color: #2B3660;
-}
-
-#SkillCheckMinigame {
-    position: relative;
-    resize: both;
-    padding: 2vh;
-    padding-bottom: 1vh;
-    top: 20.0vh;
-    width: 100vh;
-    margin: auto;
-    background-color: #080C16;
-    box-shadow: 0vh 0vh 0.2vh black;
-    display: none;
 }
 
 .SkillCheckBar {
@@ -210,31 +178,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2vh;
     font-weight: 600;
-}
-
-.SkillCheckCountdown {
-    position: absolute;
-    width: 100%;
-    height: 2vh;
-    top: 18vh;
-    text-align: center;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13vh;
-    font-weight: 600;
-}
-
-#ThermiteMinigame {
-    position: relative;
-    padding: 2vh;
-    padding-bottom: 7vh;
-    top: 23.0vh;
-    width: 50vh;
-    height: 47vh;
-    margin: auto;
-    background-color: #080C16;
-    box-shadow: 0vh 0vh 0.2vh black;
-    display: none;
 }
 
 .ThermiteBox {
@@ -274,4 +217,48 @@ body {
     height: 100%;
     width: 0%;
     background-color: #769719;
+}
+
+.KeyCode {
+    width: 100%;
+    text-align: center;
+    font-family: digital;
+    font-size: 3vh;
+    color: white;
+}
+
+.enter {
+    margin-top: 1vh;
+    width: 70%;
+    height: 4vh;
+    background-color: rgb(146, 146, 146);
+    right: 0vh;
+    float: right;
+    border-radius: 0vh 0.5vh 0.5vh 0vh;
+}
+
+.enter:hover {
+    filter: brightness(75%);
+}
+
+.backspace {
+    margin-top: 1vh;
+    width: 30%;
+    height: 4vh;
+    background-color: rgb(146, 146, 146);
+    border-radius: 0.5vh 0vh 0vh 0.5vh;
+    left: 0vh;
+}
+
+.backspace:hover {
+    filter: brightness(75%);
+}
+
+i {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2vh;
+    top: 1vh;
+    color: white;
 }

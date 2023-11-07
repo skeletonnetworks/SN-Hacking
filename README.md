@@ -61,3 +61,19 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 ```
 ![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/9056f766-f708-4dfa-98c8-1e96ac4a4a94)
 
+## Keypad Minigame
+
+```
+    exports['SN-Hacking']:ShowNumber(999, 3000) --ShowNumber(code(number), time(milliseconds))
+```
+![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/7ab6bf59-2bf2-4ffd-920d-2df0dbb55a52)
+
+```
+    local success = exports['SN-Hacking']:KeyPad(999, 3000) --KeyPad(code(number), time(milliseconds))
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+```
+![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/46b2a3c1-864f-4960-b37e-bfbd1b3e3bca)

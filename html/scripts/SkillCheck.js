@@ -2,15 +2,13 @@ var skillcheck_timeSpent = 0;
 var skillcheck_time = 5000;
 var skillcheck_bars = 20;
 var skillcheck_safebars = 3;
-var skillcheck_rounds = 2;
 var skillcheck_speed = 50;
 var skillcheck_keys = ['a','s','w','d'];
 var skillcheck_correctKey = '';
 var skillcheck_barPosition = 0;
 var skillcheck_barMoving = 1;
-var skillcheck_running = false;
-var skillcheck_MovingInterval = null;
-var skillcheck_TimerInterval = null;
+skillcheck_MovingInterval = null;
+skillcheck_TimerInterval = null;
 
 window.addEventListener('message', function(NUI) {
     const data = NUI.data;
@@ -19,7 +17,7 @@ window.addEventListener('message', function(NUI) {
         skillcheck_time = data.time;
         skillcheck_bars = data.bars;
         skillcheck_safebars = data.safebars;
-        skillcheck_rounds = data.rounds;
+        rounds = data.rounds;
         skillcheck_speed = data.speed;
         skillcheck_keys = data.keys;
         StartSkillCheckCountDown();
@@ -27,8 +25,7 @@ window.addEventListener('message', function(NUI) {
     }
 });
 
-function StartSkillCheckCountDown() {
-  var countdown = 5
+async function StartSkillCheckCountDown() {
   var i = 0
   var NewHtml = ''
   document.getElementById("SC_Timer").innerHTML = '0.0s / '+(skillcheck_time * 0.001).toFixed(2).toString()+'s';
@@ -38,27 +35,9 @@ function StartSkillCheckCountDown() {
     NewHtml+= '<div id="SC_Bar_'+i+'" class="SkillCheckBar" value = false></div>';
   };
   document.getElementById("SkillCheckBarArea").innerHTML = NewHtml;
-  $('#SkillCheckMinigame').show();
-  $('#SC_CountdownScreen').show();
-  CountdownSound.play();
-  CountdownSound.currentTime=0;
-  document.getElementById("SC_Countdown").innerHTML = countdown;
-  var CountdownInt = setInterval(function() {
-    countdown -= 1;
-    if (countdown == -0) {
-      CountdownSound.play();
-      CountdownSound.currentTime=0;
-      document.getElementById("SC_Countdown").innerHTML = 'GO!';
-    } else if (countdown == -1) {
-      clearInterval(CountdownInt);
-      $('#SC_CountdownScreen').hide();
-      StartSkillCheckGame()
-    } else {
-      CountdownSound.play();
-      CountdownSound.currentTime=0;
-      document.getElementById("SC_Countdown").innerHTML = countdown;
-    }
-  }, 1000);
+  $('#SkillCheckMinigame').fadeIn();
+  await StartCountDown(5, 'SkillCheckMinigame', true);
+  StartSkillCheckGame()
 };
 
 function StartSkillCheckGame() {
@@ -101,45 +80,10 @@ function StartSkillCheckGame() {
   skillcheck_TimerInterval = setInterval(function() {
     skillcheck_timeSpent += 100
     if (skillcheck_timeSpent >= skillcheck_time) {
-      EndSkillCheckGame(false)
+      EndMinigame(false, 'SkillCheckMinigame', null, 'top: 25vh;')
       clearInterval(skillcheck_TimerInterval);
     } else {
       document.getElementById("SC_Timer").innerHTML = (skillcheck_timeSpent * 0.001).toFixed(2).toString()+'s / '+(skillcheck_time * 0.001).toFixed(2).toString()+'s';
     }
   }, 100);
-};
-
-function EndSkillCheckGame(bool) {
-  $('#SC_ResultScreen').show();
-  skillcheck_running = false;
-  clearInterval(skillcheck_TimerInterval);
-  clearInterval(skillcheck_MovingInterval);
-  if (bool) {
-    skillcheck_rounds -= 1
-    document.getElementById("SC_ResultBanner").style.backgroundColor = "#769719";
-    document.getElementById("SC_ResultIcon").src = "./images/check.png";
-    document.getElementById("SC_ResultText").innerHTML = "Success!";
-    SuccessSound.play();
-    SuccessSound.currentTime=0;
-    setTimeout(function() {
-      $('#SC_ResultScreen').hide();
-      if (skillcheck_rounds == 0) {
-        $('#SkillCheckMinigame').hide();
-        $.post(`https://SN-Hacking/Success`);
-      } else {
-        StartSkillCheckCountDown();
-      };
-    }, 2000);
-  } else {
-    document.getElementById("SC_ResultBanner").style.backgroundColor = "#630F0A";
-    document.getElementById("SC_ResultIcon").src = "./images/x.png";
-    document.getElementById("SC_ResultText").innerHTML = "You Failed";
-    FaliedSound.play();
-    FaliedSound.currentTime=0;
-    setTimeout(function() {
-      $('#SC_ResultScreen').hide();
-      $('#SkillCheckMinigame').hide();
-      $.post(`https://SN-Hacking/Fail`);
-    }, 2000);
-  };
 };
