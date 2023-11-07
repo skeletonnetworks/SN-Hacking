@@ -44,7 +44,7 @@ function StartMemoryCountDown() {
 
 function StartMemoryGame() {
   while(mem_keys.length < mem_keysNeeded){
-    var key = Math.floor(Math.random() * 12) + 1;
+    var key = getRandomInt(0, 12) + 1;
     if(mem_keys.indexOf(key) === -1) mem_keys.push(key);
   }
   $(".Progressbar").stop().css({"width": '100%'}).animate({

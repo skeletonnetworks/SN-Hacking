@@ -62,7 +62,7 @@ function StartNumberUpCountDown() {
 function StartNumberUpGame() {
   var NewHtml = "";
   while(num_keysPlaced.length < num_keyAmount){
-    var key = Math.floor(Math.random() * num_keyAmount) + 1;
+    var key = getRandomInt(0, num_keyAmount) + 1;
     if (num_keysPlaced.indexOf(key) === -1) {
       num_keysPlaced.push(key);
       NewHtml += '<div class="Button" id="NumberUpBtn'+key+'" onclick="NumberUpKey('+key+')"><div class="ButtonFont">'+key+'</div></div>';
@@ -115,7 +115,7 @@ function NumberShuffleButtons() {
   num_keysPlaced.length = 0;
   var NewHtml = "";
   while(num_keysPlaced.length < num_keyAmount){
-    var key = Math.floor(Math.random() * num_keyAmount) + 1;
+   var key = getRandomInt(0, num_keyAmount) + 1;
     if (num_keysPlaced.indexOf(key) === -1) {
       num_keysPlaced.push(key);
       if (key < num_keysClicked.length +1) {

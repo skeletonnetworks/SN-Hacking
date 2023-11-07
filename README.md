@@ -52,7 +52,7 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 ## Skill Bar Minigame
 
 ```
-    local success = exports['SN-Hacking']:SkillBar(3000, 10, 2) --SkillBar(duration aka speed(milliseconds), width%(number), rounds(number))
+    local success = exports['SN-Hacking']:SkillBar({2000, 3000}, 10, 2) --SkillBar(duration(milliseconds or table{min(milliseconds), max(milliseconds)}), width%(number), rounds(number))
     if success then
         print("success")
     else

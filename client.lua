@@ -1,22 +1,17 @@
-local p = nil
 local inMinigame = false
+local result = nil
 
 function MemoryGame(keysNeeded, rounds, time)
     if keysNeeded == nil or keysNeeded < 1 then keysNeeded = 5 end
     if keysNeeded > 12 then keysNeeded = 12 end
     if rounds == nil or rounds < 1 then rounds = 1 end
     if time == nil or time < 1 then time = 10000 end
-    p = promise.new()
-    SendNUIMessage({
+    return StartMinigame({
         Type = 'MemoryGame',
         keysNeeded = keysNeeded,
 		rounds = rounds,
         time = time,
     })
-    SetNuiFocus(true, true)
-    inMinigameLoop()
-    local result = Citizen.Await(p)
-    return result
 end
 
 function NumberUp(keyAmount, rounds, tries, time, shuffleTime)
@@ -26,8 +21,7 @@ function NumberUp(keyAmount, rounds, tries, time, shuffleTime)
     if tries == nil or tries < 1 then tries = 1 end
     if time == nil or time < 1 then time = 10000 end
     if shuffleTime == nil or shuffleTime < 1 then shuffleTime = 5000 end
-    p = promise.new()
-    SendNUIMessage({
+    return StartMinigame({
         Type = 'NumberUp',
         keyAmount = keyAmount,
 		rounds = rounds,
@@ -35,10 +29,6 @@ function NumberUp(keyAmount, rounds, tries, time, shuffleTime)
         time = time,
         shuffleTime = shuffleTime,
     })
-    SetNuiFocus(true, true)
-    inMinigameLoop()
-    local result = Citizen.Await(p)
-    return result
 end
 
 function SkillCheck(speed, time, keys, rounds, bars, safebars)
@@ -49,8 +39,7 @@ function SkillCheck(speed, time, keys, rounds, bars, safebars)
     if rounds == nil or rounds < 1 then rounds = 1 end
     if bars == nil or bars < 5 then bars = 20 end
     if safebars == nil or safebars < 1 then safebars = 3 end
-    p = promise.new()
-    SendNUIMessage({
+    return StartMinigame({
         Type = 'SkillCheck',
         speed = speed,
 		time = time,
@@ -59,10 +48,6 @@ function SkillCheck(speed, time, keys, rounds, bars, safebars)
         bars = bars,
         safebars = safebars,
     })
-    SetNuiFocus(true, true)
-    inMinigameLoop()
-    local result = Citizen.Await(p)
-    return result
 end
 
 function Thermite(boxes, correctboxes, time, lifes, rounds, showTime)
@@ -72,8 +57,7 @@ function Thermite(boxes, correctboxes, time, lifes, rounds, showTime)
     if lifes == nil or lifes < 1 then lifes = 2 end
     if rounds == nil or rounds < 1 then rounds = 2 end
     if showTime == nil or showTime < 1 then showTime = 3000 end
-    p = promise.new()
-    SendNUIMessage({
+    return StartMinigame({
         Type = 'Thermite',
         boxes = boxes,
 		correctboxes = correctboxes,
@@ -82,56 +66,44 @@ function Thermite(boxes, correctboxes, time, lifes, rounds, showTime)
         rounds = rounds,
         showTime = showTime,
     })
-    SetNuiFocus(true, true)
-    inMinigameLoop()
-    local result = Citizen.Await(p)
-    return result
 end
+
 function SkillBar(duration, width, rounds)
-    if duration == nil or duration < 1 then duration = 3000 end
+    if duration == nil or (type(duration) ~= 'table' and  duration < 1) then duration = 3000 end
     if width == nil or width < 1 then width = 10 end
     if rounds == nil or rounds < 1 then rounds = 2 end
-    p = promise.new()
-    SendNUIMessage({
+    return StartMinigame({
         Type = 'SkillBar',
         duration = duration,
 		width = width,
         rounds = rounds,
     })
-    SetNuiFocus(true, true)
-    inMinigameLoop()
-    local result = Citizen.Await(p)
+end
+
+function StartMinigame(data)
+    inMinigame = true
+    result = nil    
+    SendNUIMessage(data)
+    repeat
+        SetNuiFocus(true, true)
+        SetPauseMenuActive(false)
+        DisableControlAction(0, 1, true) 
+        DisableControlAction(0, 2, true)
+        Wait(0)
+    until not inMinigame
     return result
 end
 
-function inMinigameLoop()
-    if inMinigame then return end
-    inMinigame = true
-    CreateThread(function()
-		repeat
-			SetPauseMenuActive(false)
-			DisableControlAction(0, 1, true) 
-			DisableControlAction(0, 2, true)
-			Wait(0)
-		until inMinigame == false  
-	end)
-end
-
-
 RegisterNUICallback('Fail', function(data)
-    if p then 
-        inMinigame = false
-        SetNuiFocus(false, false)
-        p:resolve(false)
-    end
+    SetNuiFocus(false, false)
+    result = false
+    inMinigame = false
 end)
 
 RegisterNUICallback('Success', function(data)
-    if p then
-        inMinigame = false
-        SetNuiFocus(false, false)
-        p:resolve(true)
-    end
+    SetNuiFocus(false, false)
+    result = true
+    inMinigame = false
 end)
 
 exports("MemoryGame", MemoryGame)
@@ -181,8 +153,9 @@ RegisterCommand('Thermite', function()
 end)
 
 RegisterCommand('SkillBar', function()
-                                        --SkillBar(duration aka speed(milliseconds), width%(number), rounds(number))
-    local success = exports['SN-Hacking']:SkillBar(3000, 10, 2)
+                                        --SkillBar(duration(milliseconds or table{min(milliseconds), max(milliseconds)}), width%(number), rounds(number))
+    --local success = exports['SN-Hacking']:SkillBar({2000, 3000}, 10, 2)
+    local success = exports['SN-Hacking']:SkillBar({2000, 3000}, 10, 2)
     if success then
         print("success")
     else

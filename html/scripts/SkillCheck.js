@@ -66,7 +66,7 @@ function StartSkillCheckGame() {
   skillcheck_barPosition = 0;
   skillcheck_barMoving = 1;
   skillcheck_running = true;
-  var SafeKeyStart = Math.floor(Math.random() * (skillcheck_bars - skillcheck_safebars)) + 1;
+  var SafeKeyStart = getRandomInt(0, (skillcheck_bars - skillcheck_safebars)) + 1;
   var MiddleKey = Math.round(skillcheck_safebars / 2)
   var i = 0
   while(i < skillcheck_safebars) {
@@ -75,7 +75,7 @@ function StartSkillCheckGame() {
     document.getElementById('SC_Bar_'+id.toString()).style.backgroundColor = '#235C75';
     document.getElementById('SC_Bar_'+id.toString()).value = true;
     if (i == MiddleKey) {
-      skillcheck_correctKey = skillcheck_keys[Math.floor(Math.random()*skillcheck_keys.length)];
+      skillcheck_correctKey = skillcheck_keys[getRandomInt(0, skillcheck_keys.length)];
       document.getElementById('SC_Bar_'+id.toString()).innerHTML = '<div class="SC_CorrectKey">'+skillcheck_correctKey.toUpperCase()+'</div>'
     };
   };

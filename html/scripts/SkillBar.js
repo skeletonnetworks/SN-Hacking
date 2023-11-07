@@ -19,7 +19,11 @@ window.addEventListener('message', function(NUI) {
 function StartSkillBarGame() {
   $('#SkillBarMinigame').fadeIn();
   skillbar_listening = true;
-  skillbar_left = Math.floor(Math.random() * (Math.floor(100 - skillbar_width) - Math.ceil(15)) + Math.ceil(15));
+  skillbar_left = getRandomInt(15, 100 - skillbar_width);
+  var duration = skillbar_duration
+  if (typeof duration == 'object') {
+    duration = getRandomInt(duration[0], duration[1]);
+  };
   $('.PBSkillArea').css("left", skillbar_left + "%")
   $('.PBSkillArea').css("width", skillbar_width + "%");
   $('.Progressbar').stop().css({"width": '0%', "background-color": '#257cad'}).animate({
