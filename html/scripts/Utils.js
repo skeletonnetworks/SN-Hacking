@@ -55,6 +55,35 @@ function playsound(name) {
   sounds[name].currentTime=0;
 };
 
+function ButtonClicked(num) {
+  if (memory_running) {
+    playsound('click');
+    if (num == mem_keys[0]) {
+      if (document.getElementById("CurrentKeys").innerHTML == 'NO INPUT') {
+        document.getElementById("CurrentKeys").innerHTML = '*';
+      } else {
+        document.getElementById("CurrentKeys").innerHTML += '*'
+      };
+      mem_keys.shift()
+      if (mem_keys.length == 0) {
+        EndMinigame(true, 'MemoryMinigame', StartMemoryGame);
+      }
+    } else {
+      EndMinigame(false, 'MemoryMinigame');
+    };
+  };
+  if (keycode_running) {
+    document.getElementById('KPEnter').style.backgroundColor = "rgb(59, 155, 72)";
+    document.getElementById('KPBackspace').style.backgroundColor = "rgb(145, 53, 53)";
+    playsound('click');
+    if (document.getElementById("KPCurrentKeys").innerHTML == 'NO INPUT') {
+      document.getElementById("KPCurrentKeys").innerHTML = num;
+    } else {
+      document.getElementById("KPCurrentKeys").innerHTML += num
+    };
+  };
+};
+
 function StartCountDown(int, id, style2, notxt) {
   return new Promise((resolve, reject) => {
     var countdown = int;
@@ -105,8 +134,7 @@ function EndMinigame(bool, id, NexGame, style) {
       document.getElementById("ResultBanner").style.backgroundColor = "#769719";
       document.getElementById("ResultBanner").innerHTML = `
       <i class="fa-solid fa-circle-check" style="position: absolute; width: 2.5vh;height: 2.5vh; top: 0.7vh; left: 1vh; font-size: 2.5vh;"></i>
-      <div id="ResultText" class="ResultText">Success!</div>
-      `;
+      <div id="ResultText" class="ResultText">Success!</div>`;
       playsound('success');
       setTimeout(function() {
         document.getElementById('ResultScreen').remove()
@@ -122,8 +150,7 @@ function EndMinigame(bool, id, NexGame, style) {
       document.getElementById("ResultBanner").style.backgroundColor = "#630F0A";
       document.getElementById("ResultBanner").innerHTML = `
       <i class="fa-solid fa-circle-xmark" style="position: absolute; width: 2.5vh;height: 2.5vh; top: 0.7vh; left: 1vh; font-size: 2.5vh;"></i>
-      <div id="ResultText" class="ResultText">You Failed</div>
-      `;
+      <div id="ResultText" class="ResultText">You Failed</div>`;
       playsound('fail');
       setTimeout(function() {
         document.getElementById('ResultScreen').remove()

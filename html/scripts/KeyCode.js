@@ -51,19 +51,6 @@ async function KeyCodePad() {
   });
 };
 
-function ButtonClicked(num) {
-  document.getElementById('KPEnter').style.backgroundColor = "rgb(59, 155, 72)";
-  document.getElementById('KPBackspace').style.backgroundColor = "rgb(145, 53, 53)";
-  if (keycode_running) {
-    playsound('click');
-    if (document.getElementById("KPCurrentKeys").innerHTML == 'NO INPUT') {
-      document.getElementById("KPCurrentKeys").innerHTML = num;
-    } else {
-      document.getElementById("KPCurrentKeys").innerHTML += num
-    };
-  };
-};
-
 function KPBackspace() {
   if (document.getElementById("KPCurrentKeys").innerHTML != 'NO INPUT') {
     var str = document.getElementById("KPCurrentKeys").innerHTML;

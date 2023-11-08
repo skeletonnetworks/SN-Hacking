@@ -48,22 +48,3 @@ async function StartMemoryGame() {
     }
   }, 400);
 };
-
-function ButtonClicked(num) {
-  if (memory_running) {
-    playsound('click');
-    if (num == mem_keys[0]) {
-      if (document.getElementById("CurrentKeys").innerHTML == 'NO INPUT') {
-        document.getElementById("CurrentKeys").innerHTML = '*';
-      } else {
-        document.getElementById("CurrentKeys").innerHTML += '*'
-      };
-      mem_keys.shift()
-      if (mem_keys.length == 0) {
-        EndMinigame(true, 'MemoryMinigame', StartMemoryGame);
-      }
-    } else {
-      EndMinigame(false, 'MemoryMinigame');
-    };
-  };
-};

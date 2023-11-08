@@ -100,6 +100,20 @@ function KeyPad(code, time)
     })
 end
 
+function ColorPicker(icons, typeTime, viewTime)
+    if icons == nil or icons < 1 then icons = 3 end
+    if typeTime == nil or typeTime < 1 then typeTime = 7000 end
+    if viewTime == nil or viewTime < 1 then viewTime = 3000 end
+    if rounds == nil or rounds < 1 then rounds = 2 end
+    return StartMinigame({
+        Type = 'ColorPicker',
+        icons = icons,
+		typeTime = typeTime,
+        viewTime = viewTime,
+        rounds = rounds,
+    })
+end
+
 function StartMinigame(data)
     inMinigame = true
     result = nil    
@@ -126,13 +140,14 @@ RegisterNUICallback('Success', function(data)
     inMinigame = false
 end)
 
-exports("MemoryGame", MemoryGame)
-exports("NumberUp", NumberUp)
-exports("SkillCheck", SkillCheck)
-exports("Thermite", Thermite)
-exports("SkillBar", SkillBar)
-exports("ShowNumber", ShowNumber)
-exports("KeyPad", KeyPad)
+exports('MemoryGame', MemoryGame)
+exports('NumberUp', NumberUp)
+exports('SkillCheck', SkillCheck)
+exports('Thermite', Thermite)
+exports('SkillBar', SkillBar)
+exports('ShowNumber', ShowNumber)
+exports('KeyPad', KeyPad)
+exports('ColorPicker', ColorPicker)
 
 RegisterCommand('MemoryGame', function()
                                         --MemoryGame(keysNeeded, rounds, time(mmillisecondss))
@@ -193,6 +208,16 @@ end)
 RegisterCommand('KeyPad', function()
                                         --KeyPad(code(number), time(milliseconds))
     local success = exports['SN-Hacking']:KeyPad(999, 3000)
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+end)
+
+RegisterCommand('ColorPicker', function()
+                                    --ColorPicker(icons(number), typeTime(milliseconds), viewTime(milliseconds))
+local success = exports['SN-Hacking']:ColorPicker(3, 7000, 3000)
     if success then
         print("success")
     else

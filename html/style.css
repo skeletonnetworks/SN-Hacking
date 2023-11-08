@@ -262,3 +262,37 @@ i {
     top: 1vh;
     color: white;
 }
+
+.IconList {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.ColorPickerInput {
+    position: relative;
+    display: block;
+    margin: auto;
+    height: 2.5vh;
+    width: 20vh;
+    border: none;
+    background-color: #1e2a42;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    font-weight: 600;
+    margin-top: 1vh;
+    padding: 0.5vh;
+    margin-bottom: 2vh;
+}
+
+.ColorPickerInput:hover {
+    background-color: #293753;
+}
+
+.ColorPickerInput:focus {
+    outline: none;
+}
