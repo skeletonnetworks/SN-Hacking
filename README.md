@@ -1,9 +1,9 @@
 ### SN-Hacking
 A resource containing unique hacking minigames made by ProdigyRP  
 CREDITS TO: 
-``https://prodigyworld.net/``
-``https://forum.cfx.re/t/free-howdys-hack-minigame/4814601``
-Any problems/suggestions: https://discord.gg/YgmWhMxtPU
+# ``https://prodigyworld.net/
+# https://forum.cfx.re/t/free-howdys-hack-minigame/4814601``
+# Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 
 ## Memory Minigame
 ```
