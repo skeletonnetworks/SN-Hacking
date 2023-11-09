@@ -74,7 +74,11 @@
             <div id="KPBackspace" class="backspace" onclick="KPBackspace()"><i class="fa-solid fa-delete-left"></i></div>
         </div>
         <div id="ColorPickerMinigame" class="MinigameBackground" style="position: relative; top: 40vh; width: 40vh; margin: auto; border: 0.75vh solid #172136;"></div>
-
+        <div id="MemoryCardsMinigame" class="MinigameBackground" style="position: relative; padding-bottom: 7vh; top: 23.0vh; width: 80vh; height: 47vh; margin: auto;">
+            <div class="ButtonFont" style="color: white; top:-0.5vh;">Match 2 of the same cards</div>
+            <div id="MemoryCardBoxArea" class="KeyButtonArea"  style="gap: 0.4vh; row-gap: 0.4vh; height: 100%; width: 100%; padding-bottom: 0.2vh;"></div>
+            <div class="ProgressbarBase" style="height: 0.5vh; background-color: #264154; width: 100%;"><div id="Thermite_showTime" class="Progressbar" style="background-color: #74ABC1;"></div></div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="./scripts/Utils.js"></script>
         <script src="./scripts/MemoryGame.js"></script>
@@ -84,5 +88,6 @@
         <script src="./scripts/SkillBar.js"></script>
         <script src="./scripts/KeyCode.js"></script>
         <script src="./scripts/ColorPicker.js"></script>
+        <script src="./scripts/MemoryCards.js"></script>
     </body>
 </html>

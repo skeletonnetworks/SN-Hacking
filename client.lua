@@ -113,6 +113,15 @@ function ColorPicker(icons, typeTime, viewTime)
         rounds = rounds,
     })
 end
+function MemoryCards(difficulty, time, rounds)
+    if difficulty == nil then difficulty = 'medium' end
+    if rounds == nil or rounds < 1 then rounds = 1 end
+    return StartMinigame({
+        Type = 'MemoryCards',
+		difficulty = difficulty,
+        rounds = rounds,
+    })
+end
 
 function StartMinigame(data)
     inMinigame = true
@@ -148,6 +157,7 @@ exports('SkillBar', SkillBar)
 exports('ShowNumber', ShowNumber)
 exports('KeyPad', KeyPad)
 exports('ColorPicker', ColorPicker)
+exports('MemoryCards', MemoryCards)
 
 RegisterCommand('MemoryGame', function()
                                         --MemoryGame(keysNeeded, rounds, time(mmillisecondss))
@@ -218,6 +228,16 @@ end)
 RegisterCommand('ColorPicker', function()
                                     --ColorPicker(icons(number), typeTime(milliseconds), viewTime(milliseconds))
 local success = exports['SN-Hacking']:ColorPicker(3, 7000, 3000)
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+end)
+
+RegisterCommand('MemoryCards', function()
+                                    --MemoryCards(difficulty(easy, medium, hard), rounds(number))
+local success = exports['SN-Hacking']:MemoryCards('medium')
     if success then
         print("success")
     else

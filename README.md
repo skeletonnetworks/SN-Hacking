@@ -90,3 +90,15 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
     end
 ```
 ![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/fb5dfa58-3f3e-4651-843d-af5970920e51)
+
+## Memory Cards
+
+```
+    local success = exports['SN-Hacking']:MemoryCards('medium') --MemoryCards(difficulty(easy, medium, hard), rounds(number))
+    if success then
+        print("success")
+    else
+        print("fail")
+    end
+```
+![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/5395bfb4-3cad-4983-93b1-bd5b20ab207c)
