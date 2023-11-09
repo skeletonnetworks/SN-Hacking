@@ -1,6 +1,8 @@
 ### SN-Hacking
 A resource containing unique hacking minigames made by ProdigyRP  
-FULL CREDITS TO: https://prodigyworld.net/
+CREDITS TO: ``https://prodigyworld.net/
+https://forum.cfx.re/t/free-howdys-hack-minigame/4814601
+``
 Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 
 ## Memory Minigame
@@ -78,7 +80,7 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
 ```
 ![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/46b2a3c1-864f-4960-b37e-bfbd1b3e3bca)
 
-## Color Picker (Inspired: https://forum.cfx.re/t/free-howdys-hack-minigame/4814601)
+## Color Picker
 
 ```
     local success = exports['SN-Hacking']:ColorPicker(3, 7000, 3000)--ColorPicker(icons(number), typeTime(milliseconds), viewTime(milliseconds))
