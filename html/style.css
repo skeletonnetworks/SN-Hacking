@@ -296,3 +296,23 @@ i {
 .ColorPickerInput:focus {
     outline: none;
 }
+
+.MinesDoneBtn {
+    position: relative;
+    top: 1vh;
+    width: 20vh;
+    margin: auto;
+    margin-top: 0.25vh;
+    background-color: #257cad;
+    border-radius: 0.5vh;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 2vh;
+    font-weight: 600;
+    padding: 1vh;
+}
+
+.MinesDoneBtn:hover {
+    background-color: #44abe7;
+}

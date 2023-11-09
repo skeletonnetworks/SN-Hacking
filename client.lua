@@ -113,6 +113,7 @@ function ColorPicker(icons, typeTime, viewTime)
         rounds = rounds,
     })
 end
+
 function MemoryCards(difficulty, time, rounds)
     if difficulty == nil then difficulty = 'medium' end
     if rounds == nil or rounds < 1 then rounds = 1 end
@@ -120,6 +121,21 @@ function MemoryCards(difficulty, time, rounds)
         Type = 'MemoryCards',
 		difficulty = difficulty,
         rounds = rounds,
+    })
+end
+
+function Mines(boxes, lifes, mines, special, values)
+    if boxes == nil then boxes = 5 end
+    if lifes == nil or lifes < 1 then lifes = 2 end
+    if mines == nil or mines < 1 then lifes = 8 end
+    if special == nil or special < 1 then lifes = 1 end
+    return StartMinigame({
+        Type = 'Mines',
+		boxes = boxes,
+        lifes = lifes,
+        mines = mines,
+        special = special,
+        values = values,
     })
 end
 
@@ -137,15 +153,21 @@ function StartMinigame(data)
     return result
 end
 
-RegisterNUICallback('Fail', function(data)
+RegisterNUICallback('Fail', function()
     SetNuiFocus(false, false)
     result = false
     inMinigame = false
 end)
 
-RegisterNUICallback('Success', function(data)
+RegisterNUICallback('Success', function()
     SetNuiFocus(false, false)
     result = true
+    inMinigame = false
+end)
+
+RegisterNUICallback('CallBack', function(data)
+    SetNuiFocus(false, false)
+    result = data
     inMinigame = false
 end)
 
@@ -158,6 +180,7 @@ exports('ShowNumber', ShowNumber)
 exports('KeyPad', KeyPad)
 exports('ColorPicker', ColorPicker)
 exports('MemoryCards', MemoryCards)
+exports('Mines', Mines)
 
 RegisterCommand('MemoryGame', function()
                                         --MemoryGame(keysNeeded, rounds, time(mmillisecondss))
@@ -240,6 +263,16 @@ RegisterCommand('MemoryCards', function()
 local success = exports['SN-Hacking']:MemoryCards('medium')
     if success then
         print("success")
+    else
+        print("fail")
+    end
+end)
+
+RegisterCommand('Mines', function()
+                                    --Mines(boxes(number), lifes(number), mines(number), special(number), values defaut: {normal= 0.1, mine= -0.5, special= 2, finished= 10})
+local multiplier = exports['SN-Hacking']:Mines(5, 3, 9, 1)
+    if multiplier then
+        print(multiplier)
     else
         print("fail")
     end

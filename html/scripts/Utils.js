@@ -91,14 +91,9 @@ function StartCountDown(int, id, style2, notxt) {
     if (notxt) {txt = ''};
     playsound('countdown');
     if (style2) {
-      document.getElementById(id).innerHTML  += `<div id="CountdownScreen" class="BlackBackground">
-                                                    <div id="CountdownText" class="Countdown2">${countdown}</div>
-                                                  </div>`;
+      document.getElementById(id).innerHTML  += `<div id="CountdownScreen" class="BlackBackground"><div id="CountdownText" class="Countdown2">${countdown}</div></div>`;
     } else {
-      document.getElementById(id).innerHTML  += `<div id="CountdownScreen" class="BlackBackground">
-                                                  ${txt}
-                                                  <div id="CountdownText" class="Countdown" style="top: 40%;">${countdown}</div>
-                                                </div>`;
+      document.getElementById(id).innerHTML  += `<div id="CountdownScreen" class="BlackBackground">${txt}<div id="CountdownText" class="Countdown" style="top: 40%;">${countdown}</div></div>`;
     }
     var CountdownInt = setInterval(function() {
       countdown -= 1;
@@ -123,12 +118,7 @@ function EndMinigame(bool, id, NexGame, style) {
   memory_running = false;
   thermite_running = false;
   return new Promise((resolve, reject) => {
-    document.getElementById(id).innerHTML  += `<div id="ResultScreen" class="BlackBackground">
-                                                <div id="ResultBanner" class="ResultBanner" style="${style}">
-                                                    <img id="ResultIcon" class="ResultIcon" src="./images/check.png">
-                                                    <div id="ResultText" class="ResultText">Success!</div>
-                                                </div>
-                                              </div>`;
+    document.getElementById(id).innerHTML  += `<div id="ResultScreen" class="BlackBackground"><div id="ResultBanner" class="ResultBanner" style="${style}"><img id="ResultIcon" class="ResultIcon" src="./images/check.png"><div id="ResultText" class="ResultText">Success!</div></div></div>`;
     if (bool) {
       rounds -= 1
       document.getElementById("ResultBanner").style.backgroundColor = "#769719";

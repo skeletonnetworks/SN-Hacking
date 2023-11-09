@@ -79,6 +79,13 @@
             <div id="MemoryCardBoxArea" class="KeyButtonArea"  style="gap: 0.4vh; row-gap: 0.4vh; height: 100%; width: 100%; padding-bottom: 0.2vh;"></div>
             <div class="ProgressbarBase" style="height: 0.5vh; background-color: #264154; width: 100%;"><div id="Thermite_showTime" class="Progressbar" style="background-color: #74ABC1;"></div></div>
         </div>
+        <div id="MinesMinigame" class="MinigameBackground" style="position: relative; padding-bottom: 10vh; top: 23.0vh; width: 40vh; height: 47vh; margin: auto; border-radius: 0.5vh;">
+            <div class="ButtonFont" style="color: white; top:-0.5vh;">Avoid The Mines</div>
+            <div id="CurrentMultiplier" class="TimerText" style="color: white; top:-1vh; font-size: 4vh;">1x</div>
+            <div id="Mines_LifesBar"class="TriesBar" style="width: 100%; margin-top: 3vh;"></div>
+            <div id="MinesBoxAreas" class="KeyButtonArea"  style="gap: 0.4vh; row-gap: 0.4vh; height: 37vh; width: 100%; margin-top: 2vh;"></div>
+            <div class="MinesDoneBtn" onclick="MinesChashOut()">DONE</div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="./scripts/Utils.js"></script>
         <script src="./scripts/MemoryGame.js"></script>
@@ -89,5 +96,6 @@
         <script src="./scripts/KeyCode.js"></script>
         <script src="./scripts/ColorPicker.js"></script>
         <script src="./scripts/MemoryCards.js"></script>
+        <script src="./scripts/Mines.js"></script>
     </body>
 </html>

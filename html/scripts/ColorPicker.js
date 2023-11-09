@@ -78,7 +78,7 @@ function ColorPickerIntro() {
   }, 500);
   setTimeout(function() {
     clearInterval(CountdownInt);
-    var NewHtml = `<div id="RemoveText" class="SkillBarText" style="text-align: center; margin-bottom: 1vh;">Memorize these colors</div>`
+    var NewHtml = `<div id="RemoveText" class="SkillBarText" style="text-align: center; margin-bottom: 1vh;">Memoize these colors</div>`
     NewHtml += document.getElementById('ColorPickerMinigame').innerHTML;
     NewHtml += `
         <div id="ViewIconsTimer" class="ProgressbarBase" style="width: 80%; height: 0.5vh; left: 0vh; margin: auto; margin-top: 4vh;">

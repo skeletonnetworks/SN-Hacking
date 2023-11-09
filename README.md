@@ -102,3 +102,15 @@ Any problems/suggestions: https://discord.gg/YgmWhMxtPU
     end
 ```
 ![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/5395bfb4-3cad-4983-93b1-bd5b20ab207c)
+
+## Mines
+
+```
+    local multiplier = exports['SN-Hacking']:Mines(5, 3, 9, 1) --Mines(boxes(number), lifes(number), mines(number), special(number), values defaut: {normal= 0.1, mine= -0.5, special= 2, finished= 10})
+    if multiplier then
+        print(multiplier)
+    else
+        print("fail")
+    end
+```
+![image](https://github.com/skeletonnetworks/SN-Hacking/assets/54223504/d180f288-f67a-462c-9957-e143b2555526)
