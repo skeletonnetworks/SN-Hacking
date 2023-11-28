@@ -14,7 +14,7 @@ thermite_running = false;
 skillbar_running = false;
 keycode_running = false;
 
-document.onkeyup = function(event) {
+document.onkeydown = function(event) {
   event = event || window.event;
   var charCode = event.keyCode || event.which;
   if (skillcheck_running) {
