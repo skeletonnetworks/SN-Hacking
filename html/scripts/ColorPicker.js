@@ -22,7 +22,7 @@ var colorpicker_colorpool = {
   yellow: '#F5CD47',
   pink: '#DA62AC',
   white: 'white',
-  gray: 'gray',
+  grey: 'grey',
 };
 
 colorpicker_currentIcons = [];
